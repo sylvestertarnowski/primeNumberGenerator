@@ -20,3 +20,14 @@ function findNextPrime(val) {
        }
     }
 }
+// This function informs whether the number is prime or not.
+function tellMeIfPrime() {
+    while (num = document.getElementById("checkifprime").value) {
+        if (checkIfPrime(num)) {
+            console.log(num + " is a prime number!");
+        } else {
+            console.log("This is not a prime number!");
+        }
+        break;
+    }
+}
