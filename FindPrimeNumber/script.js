@@ -15,7 +15,7 @@ value. */
 function findNextPrime(val) {
     for (var n = val + 1; n < (Math.pow(n, 2) + 2); n++) {
        if (checkIfPrime(n)) {
-        console.log(n);
+        return n;
         break; //break on the first possible find
        }
     }
@@ -24,10 +24,19 @@ function findNextPrime(val) {
 function tellMeIfPrime() {
     while (num = document.getElementById("checkifprime").value) {
         if (checkIfPrime(num)) {
-            console.log(num + " is a prime number!");
+            document.getElementById("textinfo").innerHTML = num + " is a prime number!";
+            document.getElementById("numberinfo").innerHTML = num;
         } else {
-            console.log("This is not a prime number!");
+            document.getElementById("textinfo").innerHTML = num + " is not a prime number! Below is the next possible prime number:";
+            var result = findNextPrime(num);
+            document.getElementById("numberinfo").innerHTML = result;
         }
         break;
     }
+}
+
+function printNextPrime() {
+    var num = document.getElementById("numberinfo").innerHTML.value;
+    var result = findNextPrime(num);
+    document.getElementById("numberinfo").innerHTML = result;
 }

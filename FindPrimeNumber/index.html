@@ -8,7 +8,11 @@
         <h1>Find the prime numbers!</h1>
         <input type="text" id="checkifprime" placeholder="Check for prime...">
         <button type="button" onclick="tellMeIfPrime();">Is this prime?</button>
-        <p>Check the dev tools console for answers!</p>
+        <div class="results">
+            <div class="results" id="textinfo"></div>
+            <div class="results" id="numberinfo"></div>
+            <button type="button" onclick="printNextPrime();">Find Next Prime!</button>
+        </div>
         </div>
     </body>
     <script src="script.js"></script>
