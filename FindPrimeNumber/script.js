@@ -22,21 +22,24 @@ function findNextPrime(val) {
 }
 // This function informs whether the number is prime or not.
 function tellMeIfPrime() {
-    while (num = document.getElementById("checkifprime").value) {
+    var num;
+    while (num = parseInt(document.getElementById("checkifprime").value)) {
         if (checkIfPrime(num)) {
             document.getElementById("textinfo").innerHTML = num + " is a prime number!";
             document.getElementById("numberinfo").innerHTML = num;
         } else {
             document.getElementById("textinfo").innerHTML = num + " is not a prime number! Below is the next possible prime number:";
-            var result = findNextPrime(num);
-            document.getElementById("numberinfo").innerHTML = result;
+            // var result = findNextPrime(num);
+            // console.log(findNextPrime(num));
+            // console.log(num);
+            document.getElementById("numberinfo").innerHTML = findNextPrime(num);
         }
         break;
     }
 }
-
+// this function, when triggered, get the previous prime value from a div, and then prints the next one
 function printNextPrime() {
-    var num = document.getElementById("numberinfo").innerHTML.value;
-    var result = findNextPrime(num);
-    document.getElementById("numberinfo").innerHTML = result;
+    var num = parseInt(document.getElementById("numberinfo").innerHTML);
+    console.log(document.getElementById("numberinfo").innerHTML);
+    setTimeout(document.getElementById("numberinfo").innerHTML = findNextPrime(num), 1000);
 }
